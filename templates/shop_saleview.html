@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>Product Chain</title>
+<link rel="shortcut icon" href="img/icon.ico">
+<style type="text/css">
+<!--
+.box {
+	background-color: #F3F3F3;
+	height: 270px;
+	width: 270px;
+	border: 1px solid #A8A8A8;
+	padding:10px;
+}
+.box1 {
+	background-color: #F3F3F3;
+	height: 100px;
+	width: 270px;
+	border: 1px solid #A8A8A8;
+	padding:10px;
+}
+.box2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	padding:10px;
+}
+.box3 {
+padding:10px;
+}
+.t1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #0066CC;
+	font-variant: small-caps;
+	text-transform: none;
+}
+.msg {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FF0000;
+}
+.box4
+{
+width:250px;
+height:35px;
+}
+-->
+</style>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="shortcut icon" href="../static/favicon.ico">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../static/css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="../static/css/simple-line-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="../static/css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="../static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+  
+ <div class="panel panel-default">
+  <div align="center" class="t1"><span>Product Chain</span></div>
+  
+</div>
+<div class="topnav" id="myTopnav">
+  <a href="/shop_home" class="active">Home</a>
+  <a href="/shop_saleview">Sales</a>
+  <a href="/logout">Logout</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onClick="myFunction()">&#9776;</a>
+</div>
+
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+ <!--start content area-->
+		
+
+
+<!--end content area-->
+  <h2 align="center">Welcome Retailer </h2>
+  <h3 align="center">Product Sales</h3>
+   <table width="90%" align="center">
+				<thead>
+				  <tr>
+					<th class="card-primary">Sno</th>
+					
+				    <th class="card-primary">Product</th>
+				    <th class="card-primary">Rate</th>
+				    <th class="card-primary">Customer</th>
+				    <th class="card-primary">Date</th>
+				  </tr>
+				</thead>
+				<tbody>
+				{% for row in data %}
+				  <tr>
+					<td>{{ loop.index }}</td>
+				    <td>{{ row[2] }}</td>
+				    <td>{{ row[4] }}</td>
+				    <td>{{ row[19] }}</td>
+				    <td>{{ row[21] }}</td>
+				  </tr>
+				 {% endfor %}
+				</tbody>
+</table>
+	   
+  <p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@echo off
+echo Starting Supply Chain Management System...
+echo.
+echo Installing Python dependencies...
+pip install -r requirements.txt
+echo.
+echo Starting Flask application...
+python main.py
+pause

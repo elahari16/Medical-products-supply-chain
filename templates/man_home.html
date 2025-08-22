@@ -1,0 +1,167 @@
+<html>
+<head>
+<title>Product Chain</title>
+<link rel="shortcut icon" href="img/icon.ico">
+	<link rel="shortcut icon" href="../static/favicon.ico">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../static/css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="../static/css/simple-line-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="../static/css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="../static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+  
+ <div class="panel panel-default">
+  <div  class="t1" align="center">Product Chain</span></div>
+  
+</div>
+
+
+<div class="topnav" id="myTopnav">
+  <a href="/man_home" class="active">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Products
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+		<a href="/man_cat">Category</a>
+      <a href="/man_viewprd">Stock</a>
+      <a href="/man_transview">Transfer</a>
+	  <a href="/man_supply">Supply</a>
+    </div>
+  </div> 
+  <a href="/logout">Logout</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onClick="myFunction()">&#9776;</a>
+</div>
+
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+
+
+ <!--start content area-->
+ {% if act=="1" %}
+<div class="alert alert-success">
+  <strong>Register Success!</strong> 
+</div>
+{% endif %}
+{% if act=="2" %}
+
+<div class="alert alert-warning">
+  <strong>Warning!</strong> Already exist!
+</div>
+{% endif %}		
+<div class="row">
+			<div class="col-lg-3">
+				
+				<!-- A grey horizontal navbar that becomes vertical on small screens -->
+			</div>
+
+			
+			
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header d-flex align-items-center">
+                  <h2 class="h5 display display">
+                    <h2>Product Info</h2>
+                  </h2>
+                </div>
+                <div class="card-block">
+                  <p></p>
+                  <form name="name" method="post" action="/man_home">
+                    <div class="form-group">
+                      <label>Category</label>
+                      <select name="category" class="form-control">
+					  {% for cc in catt %}
+					  <option>{{ cc[1] }}</option>
+					  {% endfor %}
+					  </select>
+                    </div>
+					<div class="form-group">
+                      <label>Product Name</label>
+                      <input type="text" name="product" placeholder="Product Name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Product Rate</label>
+                      <input type="text" name="price" placeholder="Product Rate" class="form-control">
+                    </div>
+               
+					
+                                                                                    <div class="form-group">
+                      <label>Product Weight/Grams/Kg/Numbers</label>
+                      <input type="text" name="psize" placeholder="Product Weight" class="form-control">
+					  <select name="kg" class="form-control">
+					  <option>Ml</option>
+					  <option>Gram</option>
+					  <option>Box</option>
+					  <option>Packet</option>
+					  <option>Bottle</option>
+					  </select>
+                    </div>
+                   <div class="form-group">
+                      <label>Product Description</label>
+                      <textarea name="description" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label>Manufacture Location</label>
+                      <input type="text" name="location" placeholder="Manufacture Location" class="form-control">
+                    </div>
+					<div class="form-group">
+                      <label>Manufacture Date</label>
+                      <input type="date" name="mdate" placeholder="Manufacture Date" class="form-control">
+                    </div>
+                                                                                               
+                     <div class="form-group">
+                      <label>Expiry Date</label>
+                      <input type="date" name="edate" placeholder="Expiry Date" class="form-control">
+                    </div>
+					
+					<!--<div class="form-group">
+                      <label>Product Photo</label>
+                      <input type="file" name="file">
+                    </div>-->
+					
+                    <div class="form-group">       
+                      <input type="submit" name="btn" value="Submit" class="btn btn-primary">
+                    </div>
+                  </form>
+                </div>
+				{% if msg=="success" %}
+				<p align="center" style="color:#003399">Added Success</p>
+				
+				{% endif %}
+              </div>
+</div>
+ 
+<!--end content area-->
+ 
+  <p>&nbsp;</p>
+</body>
+</html>

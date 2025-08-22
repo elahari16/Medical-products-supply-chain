@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>Product Chain</title>
+<link rel="shortcut icon" href="../static/img/icon.ico">
+
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="shortcut icon" href="../static/favicon.ico">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../static/css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="../static/css/simple-line-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="../static/css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="../static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+    <style type="text/css">
+<!--
+.bg1 {	background-color: #FF6633;
+}
+-->
+    </style>
+</head>
+
+<body>
+  
+ <div class="panel panel-default">
+  <div class="t1" align="center"><span>Product Chain</span></div>
+</div>
+<div class="topnav" id="myTopnav">
+  <a href="/cus_home" class="active">Home</a>
+  <!--<div class="dropdown">
+    <button class="dropbtn">Products
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+		<a href="/man_cat">Category</a>
+      <a href="/man_viewprd">Stock</a>
+      <a href="/man_transview">Transfer</a>
+	  <a href="/man_supply">Supply</a>
+    </div>
+  </div>--> 
+  <a href="/logout">Logout</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onClick="myFunction()">&#9776;</a>
+</div>
+ <!--start content area-->
+
+<!--end content area-->
+  <form id="form1" name="form1" method="post" action="">
+    <table width="317" height="120" border="0" align="center">
+      <tr>
+        <td colspan="2" align="left" class="bg1">View Blocks </td>
+      </tr>
+      <tr>
+        <td width="83" align="left">Product ID </td>
+        <td width="224" align="left"><input type="password" name="key" /><input type="hidden" name="pid" value="{{ pid }}" />
+		<input type="hidden" name="prdid" value="{{ prdid }}" /></td>
+      </tr>
+      <tr>
+        <td align="left">&nbsp;</td>
+        <td align="left"><input type="submit" name="btn" value="Submit" /></td>
+      </tr>
+    </table>
+    <p align="center">{{ msg }}</p>
+	{% if msg=="success" %}
+	
+    {% if act=="yes" %}
+	<table width="80%" border="1" align="center">
+      <tr>
+        <td width="53" align="center" class="bg1">Sno</td>
+        <td width="503" align="center" class="bg1">Details</td>
+      </tr>
+	 {% for row in data %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ row[4] }}</td>
+      </tr>
+	 {% endfor %}
+    </table>
+	
+			{% if days>0: %}
+			<h4 style="color:#009933" align="center">This Product has not expired..</h4>
+			{% else %}
+			<h4 style="color:#009933" align="center">This Product has expired!</h4>
+			{% endif %}
+	
+	{% else %}
+	<h4 style="color:#FF0000" align="center">Wrong ID!</h4>
+	{% endif %}
+	
+	{% endif %}
+    <p>&nbsp;</p>
+  </form>
+  <p align="center" class="msg">&nbsp;</p>
+  <p>&nbsp;</p>
+</body>
+</html>
