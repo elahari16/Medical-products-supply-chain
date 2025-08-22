@@ -221,7 +221,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support and queries:
 - Create an issue on GitHub
-- Email: [your-email@domain.com]
+- Email: elahari16@gmail.com 
 - Documentation: Check the `/docs` folder
 
 ## 🙏 Acknowledgments
